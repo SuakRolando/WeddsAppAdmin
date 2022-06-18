@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Alert } from 'react-native'
 import React from 'react'
-=======
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
->>>>>>> 1c61e1b172743a9b3f18ab8447e3a2c93b8df7a6
 
 const SignIn = () => {
   return (

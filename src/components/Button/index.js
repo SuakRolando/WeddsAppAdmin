@@ -22,7 +22,6 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: (backgroundColor, height, width, borderRadius) => ({
-    fontWight: 'bold',
     height: height,
     width: width,
     backgroundColor: backgroundColor,
