@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Header</Text>
     </View>
   );
@@ -11,4 +11,11 @@ const Header = () => {
 
 export default Header;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    height: 158,
+    backgroundColor: '#FFD0EC',
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
+  },
+});

@@ -3,7 +3,7 @@ import React from 'react';
 import {Header, Home} from './src';
 
 const App = () => {
-  return <Home />;
+  return <Header />;
 };
 
 export default App;
