@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Header, Home, SignIn} from './src';
+import {EditPackage, Header, Home, HomeContent, SignIn, SignUp} from './src';
 
 const App = () => {
-  return <SignIn />;
+  return <SignUp />;
 };
 
 export default App;
