@@ -1,17 +1,17 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const Button = (
-  {
-    title = 'Sign In',
-    backgroundColor = '#FFD0EC',
-    height = 45,
-    onPress,
-    width = 250,
-    borderRadius = 10,
-  },
-  {fontSize = 17, fontWeight = 'bold', color = 'white'},
-) => {
+const Button = ({
+  title = 'Sign In',
+  backgroundColor = '#FFD0EC',
+  height = 45,
+  onPress,
+  width = 250,
+  borderRadius = 10,
+  fontSize = 17,
+  fontWeight = 'bold',
+  color = 'white',
+}) => {
   return (
     <TouchableOpacity
       style={styles.container(backgroundColor, height, width, borderRadius)}
