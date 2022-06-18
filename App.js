@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Header, Home, HomeContent,SignIn} from './src';
+import {EditPackage, Header, Home, HomeContent, SignIn} from './src';
 
 const App = () => {
-  return <Home />;
-}
+  return <EditPackage />;
+};
 
 export default App;
 const styles = StyleSheet.create({});
