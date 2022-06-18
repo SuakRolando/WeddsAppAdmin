@@ -83,11 +83,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   illustration: {
+    flex: 1,
     alignItems: 'center',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    position: 'absolute',
+    justifyContent: 'flex-end',
   },
   logoWrapper: {
     alignItems: 'center',
