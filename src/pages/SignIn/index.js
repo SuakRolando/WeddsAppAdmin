@@ -55,4 +55,29 @@ const SignIn = () => {
 
 export default SignIn;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  illustration: {
+    position: 'absolute',
+    bottom: 0,
+    alignSelf: 'center',
+  },
+  logoWrapper: {
+    alignItems: 'center',
+    marginTop: 90,
+  },
+  SignInWrapper: {
+    marginHorizontal: 30,
+  },
+  textSignUp: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  textHere: {
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+  },
+});
