@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Dimensions,
+  FlatList,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {
@@ -21,13 +22,48 @@ import {
   WO,
 } from '../../assets/icons';
 import {Button, Gap, TextInput} from '../../components';
+import FIREBASE from '../../config/Firebase';
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [vendor, setVendor] = useState([
+    {icon: <Bridal />, id: 1},
+    {icon: <Catering />, id: 2,},
+    {icon: <Photographer />, id: 3,},
+    {icon: <Venue />,id: 4,},
+    {icon: <WO />,id: 5,} 
+  ]);
+
+  const [selectVendor, setSelectVendor] = useState({
+    id: 1,
+  });
+  console.log('id', selectVendor);
+
+  const onSubmit = () => {
+    FIREBASE.auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        const uid = res.user.uid;
+        const data = {
+          name: name,
+          email: email,
+          phoneNumber: phoneNumber,
+          address: address,
+          vendor: selectVendor.id,
+        };
+        FIREBASE.database().ref(`vendors/${uid}`).set(data);
+        setName('');
+        setPhoneNumber('');
+        setAddress('');
+        setEmail('');
+        setPassword('');
+      });
+  };
 
   return (
     <KeyboardAvoidingView
@@ -37,43 +73,38 @@ const SignUp = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
             <Text style={styles.txtContainer}>Select Vendor Type</Text>
+            <Text style={{fontStyle: 'italic'}}>Avialable 5 Category</Text>
           </View>
           <View style={styles.vendorListWrapper}>
-            <View style={styles.vendorWrapper}>
-              <TouchableOpacity activeOpacity={0.7} style={styles.vendor}>
-                <Bridal />
-              </TouchableOpacity>
-              <Text style={styles.txtVendor}>Bridal</Text>
+            <View>
+              <FlatList
+                data={vendor}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                style={{
+                  padding: 10,
+                  backgroundColor: '#FFD0EC',
+                  borderRadius: 10,
+                }}
+                renderItem={({item}) => (
+                  <TouchableOpacity
+                    style={{
+                      backgroundColor:
+                        selectVendor.id == item.id ? '#B7FFBF' : 'white',
+                      width: 70,
+                      height: 70,
+                      marginRight: 17,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 15,
+                      elevation: 6,
+                    }}
+                    onPress={() => setSelectVendor(item)}>
+                    {item.icon}
+                  </TouchableOpacity>
+                )}
+              />
             </View>
-            <Gap width={35} />
-            <View style={styles.vendorWrapper}>
-              <TouchableOpacity activeOpacity={0.7} style={styles.vendor}>
-                <Catering />
-              </TouchableOpacity>
-              <Text style={styles.txtVendor}>Venue</Text>
-            </View>
-            <Gap width={35} />
-            <View style={styles.vendorWrapper}>
-              <TouchableOpacity activeOpacity={0.7} style={styles.vendor}>
-                <Photographer />
-              </TouchableOpacity>
-              <Text style={styles.txtVendor}>Photographer</Text>
-            </View>
-            {/* <Gap width={35}/> */}
-            <View style={styles.vendorWrapper}>
-              <TouchableOpacity activeOpacity={0.7} style={styles.vendor}>
-                <Venue />
-              </TouchableOpacity>
-              <Text style={styles.txtVendor}>Venue</Text>
-            </View>
-            {/* <Gap width={35}/> */}
-            <View style={styles.vendorWrapper}>
-              <TouchableOpacity activeOpacity={0.7} style={styles.vendor}>
-                <WO />
-              </TouchableOpacity>
-              <Text style={styles.txtVendor}>WO</Text>
-            </View>
-            <View style={styles.viewKosong}></View>
           </View>
           <View style={styles.illustration}>
             <SignUpIllustration />
@@ -107,21 +138,31 @@ const SignUp = () => {
               title="Email Address"
               placeholder="Type your email address"
               value={email}
-              onChangeText={value=>setEmail(value)}
+              onChangeText={value => setEmail(value)}
             />
             <Gap height={20} />
             <TextInput
               title="Password"
               placeholder="Type your password"
               value={password}
-              onChangeText={value=>setPassword(value)}
+              onChangeText={value => setPassword(value)}
               secureTextEntry
             />
             <Gap height={40} />
             <View style={styles.btnWrapper}>
-              <Button title="SignUp" />
+              <Button title="SignUp" onPress={onSubmit} />
             </View>
             <Gap height={30} />
+          </View>
+          <View style={styles.footer}>
+            <Text>Don't have account ? Sign up </Text>
+            <TouchableOpacity activeOpacity={0.7}>
+              <Text
+                style={styles.textHere}
+                onPress={() => navigation.navigate('SignIn')}>
+                here
+              </Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </TouchableWithoutFeedback>
@@ -141,7 +182,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 50,
     marginLeft: 30,
-    marginBottom: 20,
+    marginBottom: 15,
   },
   txtContainer: {
     fontSize: 20,
@@ -165,16 +206,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   vendorListWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    marginHorizontal: 48,
+    marginHorizontal: 30,
+    marginBottom: 10,
   },
   vendorWrapper: {
     marginBottom: 20,
-    alignItems: 'center',
   },
   vendor: {
+    backgroundColor: 'white',
+    width: 70,
+    height: 70,
+    marginRight: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 15,
+    elevation: 6,
+  },
+  bridal: {
     backgroundColor: 'white',
     width: 70,
     height: 70,
@@ -192,5 +240,14 @@ const styles = StyleSheet.create({
   viewKosong: {
     width: 70,
     height: 70,
+  },
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 30,
+  },
+  textHere: {
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
   },
 });
