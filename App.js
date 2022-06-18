@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Header, Home} from './src';
+import {Header, Home, HomeContent} from './src';
 
 const App = () => {
-  return <Header />;
+  return <Home />;
 };
 
 export default App;
