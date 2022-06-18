@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Button } from './src'
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {EditPackage, Header, Home, HomeContent, SignIn, SignUp} from './src';
 
 const App = () => {
-  return (<Button/>
-  )
-}
+  return <SignUp />;
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

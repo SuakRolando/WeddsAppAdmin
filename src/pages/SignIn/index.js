@@ -1,5 +1,14 @@
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Alert } from 'react-native'
-import React from 'react'
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  Alert,
+} from 'react-native';
+import React from 'react';
+import {IllustrationWedding, LogoWedds} from '../../assets/icons';
+import {Gap, TextInput, Button} from '../../../src';
 
 const SignIn = () => {
   return (
@@ -13,36 +22,23 @@ const SignIn = () => {
         <TextInput
           title="Email Address"
           placeholder="Type your email address"
-          value={email}
-          onChangeText={email => this.setState({email})}
         />
         <Gap height={10} />
         <TextInput
           title="Password"
           placeholder="Type your password"
-          value={password}
-          onChangeText={password => this.setState({password})}
           secureTextEntry
         />
         <Gap height={25} />
-        <Button
-          title="Sign In"
-          //dp button loading rupa nda jadi pas ba loading
-          loading={signInLoading}
-          onPress={() => this.signIn()}
-          //onPress={() => navigation.navigate ('MainApp')}
-          //onPress={onSubmit}
-        />
+      </View>
+      <View style={styles.btnWrapper}>
+        <Button/>
       </View>
       <Gap height={25} />
       <View style={styles.textSignUp}>
         <Text>Don't have account ? Sign up </Text>
         <TouchableOpacity activeOpacity={0.7}>
-          <Text
-            style={styles.textHere}
-            onPress={() => this.props.navigation.navigate('SignUp')}>
-            here
-          </Text>
+          <Text style={styles.textHere}>here</Text>
         </TouchableOpacity>
       </View>
       {/* masih ta ka atas ini ilustrasi pas mo ba input text */}
@@ -56,28 +52,33 @@ const SignIn = () => {
 export default SignIn;
 
 const styles = StyleSheet.create({
-    page: {
-      flex: 1,
-      backgroundColor: 'white',
-    },
-    illustration: {
-      position: 'absolute',
-      bottom: 0,
-      alignSelf: 'center',
-    },
-    logoWrapper: {
-      alignItems: 'center',
-      marginTop: 90,
-    },
-    SignInWrapper: {
-      marginHorizontal: 30,
-    },
-    textSignUp: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-    },
-    textHere: {
-      textDecorationLine: 'underline',
-      fontWeight: 'bold',
-    },
-  })
+  page: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  illustration: {
+    alignItems: 'center',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    position: 'absolute',
+  },
+  logoWrapper: {
+    alignItems: 'center',
+    marginTop: 90,
+  },
+  SignInWrapper: {
+    marginHorizontal: 30,
+  },
+  textSignUp: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  textHere: {
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+  },
+  btnWrapper: {
+    alignItems: 'center'
+  }
+});

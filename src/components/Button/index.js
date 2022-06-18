@@ -1,16 +1,19 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const Button = ({
-  title = 'Sign In',
-  backgroundColor = '#FFD0EC',
-  height = 45,
-  onPress,
-  width = 250,
-  borderRadius = 10,
-}, {fontSize = 17, fontWeight = 'bold', color = 'white'}) => {
+const Button = (
+  {
+    title = 'Sign In',
+    backgroundColor = '#FFD0EC',
+    height = 45,
+    onPress,
+    width = 250,
+    borderRadius = 10,
+  },
+  {fontSize = 17, fontWeight = 'bold', color = 'white'},
+) => {
   return (
-    <TouchableOpacity
+    <TouchableOpacity activeOpacity={0.7}
       style={styles.container(backgroundColor, height, width, borderRadius)}
       onPress={onPress}>
       <Text style={styles.txt(fontSize, fontWeight, color)}>{title}</Text>
@@ -32,6 +35,6 @@ const styles = StyleSheet.create({
   txt: (fontSize, fontWight, color) => ({
     color: color,
     fontWeight: fontWight,
-    fontSize: fontSize
-  })
+    fontSize: fontSize,
+  }),
 });
