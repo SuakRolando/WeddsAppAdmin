@@ -1,57 +1,64 @@
+<<<<<<< HEAD
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Alert } from 'react-native'
 import React from 'react'
+=======
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+>>>>>>> 1c61e1b172743a9b3f18ab8447e3a2c93b8df7a6
 
 const SignIn = () => {
   return (
     <View style={styles.page}>
-
       <View style={styles.logoWrapper}>
-        <LogoWedds/>
+        <LogoWedds />
       </View>
-      
+
       <View style={styles.SignInWrapper}>
-        <Gap height={10}/>
-        <TextInput 
-          title ="Email Address" 
+        <Gap height={10} />
+        <TextInput
+          title="Email Address"
           placeholder="Type your email address"
           value={email}
-          onChangeText={(email) => this.setState({email})}
+          onChangeText={email => this.setState({email})}
         />
-        <Gap height={10}/>
-        <TextInput 
-          title ="Password" 
+        <Gap height={10} />
+        <TextInput
+          title="Password"
           placeholder="Type your password"
           value={password}
-          onChangeText={(password) => this.setState({password})}
+          onChangeText={password => this.setState({password})}
           secureTextEntry
         />
-        <Gap height={25}/>
-        <Button 
-          title ="Sign In"
+        <Gap height={25} />
+        <Button
+          title="Sign In"
           //dp button loading rupa nda jadi pas ba loading
-          loading = {signInLoading}
-          onPress = {() => this.signIn()}
+          loading={signInLoading}
+          onPress={() => this.signIn()}
           //onPress={() => navigation.navigate ('MainApp')}
           //onPress={onSubmit}
         />
       </View>
-      <Gap height={25}/>
+      <Gap height={25} />
       <View style={styles.textSignUp}>
         <Text>Don't have account ? Sign up </Text>
-          <TouchableOpacity activeOpacity={0.7}>
-            <Text style={styles.textHere} onPress={() => this.props.navigation.navigate ('SignUp')}>here</Text>
-          </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7}>
+          <Text
+            style={styles.textHere}
+            onPress={() => this.props.navigation.navigate('SignUp')}>
+            here
+          </Text>
+        </TouchableOpacity>
       </View>
       {/* masih ta ka atas ini ilustrasi pas mo ba input text */}
       <View style={styles.illustration}>
-        <IllustrationWedding/>
+        <IllustrationWedding />
       </View>
-
     </View>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
 
 const styles = StyleSheet.create({
     page: {
