@@ -1,12 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Button } from './src'
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {Button, ProfileAdmin} from './src';
+import ProfileAdminContent from './src/components/ProfileAdminContent';
+import EditProfileContent from './src/components/EditProfileContent';
 
 const App = () => {
-  return (<Button/>
-  )
-}
+  return (
+    <EditProfileContent />
+    // <Button/>
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

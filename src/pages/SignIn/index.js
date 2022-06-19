@@ -1,10 +1,12 @@
-<<<<<<< HEAD
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Alert } from 'react-native'
-import React from 'react'
-=======
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  Alert,
+} from 'react-native';
 import React from 'react';
->>>>>>> 1c61e1b172743a9b3f18ab8447e3a2c93b8df7a6
 
 const SignIn = () => {
   return (
@@ -61,28 +63,28 @@ const SignIn = () => {
 export default SignIn;
 
 const styles = StyleSheet.create({
-    page: {
-      flex: 1,
-      backgroundColor: 'white',
-    },
-    illustration: {
-      position: 'absolute',
-      bottom: 0,
-      alignSelf: 'center',
-    },
-    logoWrapper: {
-      alignItems: 'center',
-      marginTop: 90,
-    },
-    SignInWrapper: {
-      marginHorizontal: 30,
-    },
-    textSignUp: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-    },
-    textHere: {
-      textDecorationLine: 'underline',
-      fontWeight: 'bold',
-    },
-  })
+  page: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  illustration: {
+    position: 'absolute',
+    bottom: 0,
+    alignSelf: 'center',
+  },
+  logoWrapper: {
+    alignItems: 'center',
+    marginTop: 90,
+  },
+  SignInWrapper: {
+    marginHorizontal: 30,
+  },
+  textSignUp: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  textHere: {
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+  },
+});
