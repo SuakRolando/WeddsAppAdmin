@@ -13,6 +13,13 @@ import Venue from './Venue.svg';
 import WO from './WO.svg';
 import AddImagePackage from './AddImagePackage.svg';
 import Add from './Add.svg';
+import Locations from './Location.svg';
+import WeddingProfileAdmin from './WeddingProfileAdmin.svg';
+import Whatsapp from './Whatsapp.svg';
+import EditProfile from './EditProfile.svg';
+import SignOUt from './SignOutsvg.svg';
+import Go from './Go.svg';
+import IconBack from './IconBack.svg';
 
 export {
   AddImage,
@@ -30,4 +37,11 @@ export {
   WO,
   AddImagePackage,
   Add,
+  IconBack,
+  Go,
+  SignOUt,
+  EditProfile,
+  Whatsapp,
+  WeddingProfileAdmin,
+  Locations,
 };
