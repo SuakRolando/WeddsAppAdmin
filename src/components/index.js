@@ -7,6 +7,7 @@ import Button from './Button';
 import ButtonProfileAdmin from './ButtonProfileAdmin';
 import TextInput from './TextInput';
 import ContentOrder from './ContentOrder';
+import InputAddPackage from './InputAddPackgae';
 
 export {
   Header,
@@ -17,5 +18,6 @@ export {
   Button,
   TextInput,
   ButtonProfileAdmin,
-  ContentOrder
+  ContentOrder,
+  InputAddPackage
 };
