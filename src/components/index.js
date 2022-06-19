@@ -6,7 +6,7 @@ import TextInput_EditPackage from './TextInput_EditPackage';
 import Button from './Button';
 import ButtonProfileAdmin from './ButtonProfileAdmin';
 import TextInput from './TextInput';
-// import ContentOrder from './ContentOrder';
+import ContentOrder from './ContentOrder';
 
 export {
   Header,
@@ -16,6 +16,6 @@ export {
   TextInput_EditPackage,
   Button,
   TextInput,
-  //   ContentOrder,
   ButtonProfileAdmin,
+  ContentOrder
 };
