@@ -103,6 +103,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  btnWrapper: {
+    alignItems: 'center',
+  },
   textHere: {
     textDecorationLine: 'underline',
     fontWeight: 'bold',

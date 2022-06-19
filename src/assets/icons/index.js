@@ -11,6 +11,7 @@ import Catering from './Catering.svg';
 import Photographer from './Photographer.svg';
 import Venue from './Venue.svg';
 import WO from './WO.svg';
+import AddImagePackage from './AddImagePackage.svg';
 import Locations from './Location.svg';
 import WeddingProfileAdmin from './WeddingProfileAdmin.svg';
 import Whatsapp from './Whatsapp.svg';
@@ -34,6 +35,7 @@ export {
   Photographer,
   Venue,
   WO,
+  AddImagePackage,
   IconBack,
   Go,
   SignOUt,

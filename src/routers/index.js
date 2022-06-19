@@ -1,6 +1,14 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SplashScreen, SignUp, SignIn, EditPackage, Home} from '../../src';
+import {
+  SplashScreen,
+  SignUp,
+  SignIn,
+  EditPackage,
+  Home,
+  ProfileAdmin,
+  EditProfile,
+} from '../../src';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,14 +30,24 @@ const Router = () => {
         component={SignIn}
         options={{headerShown: false}}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Home"
         component={Home}
         options={{headerShown: false}}
-      /> */}
+      />
       <Stack.Screen
         name="EditPackage"
         component={EditPackage}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ProfileAdmin"
+        component={ProfileAdmin}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

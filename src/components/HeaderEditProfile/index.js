@@ -2,9 +2,9 @@ import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {IconBack} from '../../assets/icons';
 
-const HeaderEditProfile = () => {
+const HeaderEditProfile = ({onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <IconBack />
     </TouchableOpacity>
   );

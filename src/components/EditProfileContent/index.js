@@ -23,6 +23,7 @@ const EditProfileContent = () => {
       setHasPhoto(true);
     }
   };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={getPhoto}>
@@ -48,13 +49,13 @@ const EditProfileContent = () => {
           />
         )}
       </TouchableOpacity>
-      <Gap height={54} />
-      <Button
+      <Gap height={56} />
+      {/* <Button
         width={244}
         height={43}
         title={'Change Profile Picture'}
         fontWeight={'normal'}
-      />
+      /> */}
       <Gap height={39} />
       <TextInput
         title={'Full Name'}
@@ -77,12 +78,6 @@ const EditProfileContent = () => {
         width={323}
       />
       <Gap height={33} />
-      <Button
-        title={'Save Change'}
-        height={43}
-        width={233}
-        fontWeight={'normal'}
-      />
     </View>
   );
 };

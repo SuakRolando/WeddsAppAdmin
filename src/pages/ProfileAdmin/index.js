@@ -9,7 +9,7 @@ import {
   Whatsapp,
 } from '../../assets/icons';
 
-const ProfileAdmin = () => {
+const ProfileAdmin = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.contentWrapper}>
@@ -34,6 +34,7 @@ const ProfileAdmin = () => {
             iconKanan={<Go />}
             gapKiri={75}
             gapKanan={75}
+            onPress={() => navigation.navigate('EditProfile')}
           />
           <Gap height={37} />
           <ButtonProfileAdmin
@@ -42,6 +43,7 @@ const ProfileAdmin = () => {
             iconKanan={<Go />}
             gapKiri={87.5}
             gapKanan={87.5}
+            onPress={() => navigation.navigate('SignIn')}
           />
         </View>
       </View>

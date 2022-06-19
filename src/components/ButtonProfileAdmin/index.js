@@ -8,11 +8,13 @@ const ButtonProfileAdmin = ({
   iconKanan,
   gapKiri,
   gapKanan,
+  onPress,
 }) => {
   return (
     <TouchableOpacity
       style={[styles.container, styles.card, styles.elevation]}
-      activeOpacity={0.7}>
+      activeOpacity={0.7}
+      onPress={onPress}>
       {iconKiri}
       <Gap width={gapKiri} />
       <Text style={styles.txt}>{title}</Text>
