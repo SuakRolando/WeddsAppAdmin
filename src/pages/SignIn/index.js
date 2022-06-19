@@ -6,7 +6,6 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
-import React from 'react';
 import React, {useState} from 'react';
 import {IllustrationWedding, LogoWedds} from '../../assets/icons';
 import {Gap, TextInput, Button} from '../../../src';
@@ -102,14 +101,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  btnWrapper: {
+    alignItems: 'center'
+  },
   textHere: {
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
-<<<<<<< HEAD
-=======
-  btnWrapper: {
-    alignItems: 'center',
-  },
->>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
 });

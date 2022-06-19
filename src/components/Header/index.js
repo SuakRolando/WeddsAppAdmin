@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <View style={{flexDirection: 'row'}}>
       <Image
-        source={require('../../assets/pictures/headeContent.jpg')}
+        // source={require('../../assets/pictures/headeContent.jpg')}
         style={{
           width: 395,
           height: 240,
@@ -16,7 +16,7 @@ const Header = () => {
         }}
       />
       <Image
-        source={require('../../assets/pictures/userPhoto.jpg')}
+        // source={require('../../assets/pictures/userPhoto.jpg')}
         style={{
           width: 70,
           height: 70,

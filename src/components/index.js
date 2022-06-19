@@ -6,8 +6,6 @@ import TextInput_EditPackage from './TextInput_EditPackage';
 import Button from './Button';
 import ButtonProfileAdmin from './ButtonProfileAdmin';
 import TextInput from './TextInput';
-import ContentOrder from './ContentOrder';
-import InputAddPackage from './InputAddPackgae';
 // import ContentOrder from './ContentOrder';
 
 export {
@@ -18,8 +16,6 @@ export {
   TextInput_EditPackage,
   Button,
   TextInput,
-  ContentOrder,
-  InputAddPackage,
   //   ContentOrder,
   ButtonProfileAdmin,
 };
