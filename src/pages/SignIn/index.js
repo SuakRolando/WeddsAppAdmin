@@ -6,9 +6,7 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
-<<<<<<< HEAD
 import React from 'react';
-=======
 import React, {useState} from 'react';
 import {IllustrationWedding, LogoWedds} from '../../assets/icons';
 import {Gap, TextInput, Button} from '../../../src';
@@ -35,7 +33,6 @@ const SignIn = ({navigation}) => {
         navigation.navigate('Home', {uid: res.user.uid});
       });
   };
->>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
 
   return (
     <View style={styles.page}>
@@ -87,15 +84,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   illustration: {
-<<<<<<< HEAD
     position: 'absolute',
     bottom: 0,
     alignSelf: 'center',
-=======
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
->>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
   },
   logoWrapper: {
     alignItems: 'center',
