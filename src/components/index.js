@@ -6,6 +6,7 @@ import TextInput_EditPackage from './TextInput_EditPackage';
 import Button from './Button';
 import TextInput from './TextInput';
 import ContentOrder from './ContentOrder';
+import InputAddPackage from './InputAddPackgae';
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   Button,
   TextInput,
   ContentOrder,
+  InputAddPackage,
 };

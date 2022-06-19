@@ -11,6 +11,8 @@ import Catering from './Catering.svg';
 import Photographer from './Photographer.svg';
 import Venue from './Venue.svg';
 import WO from './WO.svg';
+import AddImagePackage from './AddImagePackage.svg';
+import Add from './Add.svg';
 
 export {
   AddImage,
@@ -26,4 +28,6 @@ export {
   Photographer,
   Venue,
   WO,
+  AddImagePackage,
+  Add,
 };
