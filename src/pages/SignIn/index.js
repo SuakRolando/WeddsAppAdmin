@@ -6,9 +6,37 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React, {useState} from 'react';
+import {IllustrationWedding, LogoWedds} from '../../assets/icons';
+import {Gap, TextInput, Button} from '../../../src';
+import FIREBASE from '../../config/Firebase';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // const onSubmit = () => {
+  //   firebase
+  //     .auth()
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then(res => {
+  //       navigation.navigate('Home', {
+  //         uid: res.user.uid,
+  //       });
+  //     })}
+
+  const onSubmit = () => {
+    FIREBASE.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(res => {
+        navigation.navigate('Home', {uid: res.user.uid});
+      });
+  };
+>>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
+
   return (
     <View style={styles.page}>
       <View style={styles.logoWrapper}>
@@ -21,35 +49,26 @@ const SignIn = () => {
           title="Email Address"
           placeholder="Type your email address"
           value={email}
-          onChangeText={email => this.setState({email})}
+          onChangeText={value => setEmail(value)}
         />
         <Gap height={10} />
         <TextInput
           title="Password"
           placeholder="Type your password"
-          value={password}
-          onChangeText={password => this.setState({password})}
           secureTextEntry
+          value={password}
+          onChangeText={value => setPassword(value)}
         />
         <Gap height={25} />
-        <Button
-          title="Sign In"
-          //dp button loading rupa nda jadi pas ba loading
-          loading={signInLoading}
-          onPress={() => this.signIn()}
-          //onPress={() => navigation.navigate ('MainApp')}
-          //onPress={onSubmit}
-        />
+      </View>
+      <View style={styles.btnWrapper}>
+        <Button onPress={onSubmit} />
       </View>
       <Gap height={25} />
       <View style={styles.textSignUp}>
         <Text>Don't have account ? Sign up </Text>
-        <TouchableOpacity activeOpacity={0.7}>
-          <Text
-            style={styles.textHere}
-            onPress={() => this.props.navigation.navigate('SignUp')}>
-            here
-          </Text>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')}>
+          <Text style={styles.textHere}>here</Text>
         </TouchableOpacity>
       </View>
       {/* masih ta ka atas ini ilustrasi pas mo ba input text */}
@@ -68,9 +87,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   illustration: {
+<<<<<<< HEAD
     position: 'absolute',
     bottom: 0,
     alignSelf: 'center',
+=======
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+>>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
   },
   logoWrapper: {
     alignItems: 'center',
@@ -87,4 +112,10 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
+<<<<<<< HEAD
+=======
+  btnWrapper: {
+    alignItems: 'center',
+  },
+>>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
 });

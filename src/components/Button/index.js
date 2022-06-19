@@ -8,9 +8,12 @@ const Button = ({
   onPress,
   width = 250,
   borderRadius = 10,
-}, {fontSize = 17, fontWeight = 'bold', color = 'white'}) => {
+  fontSize = 17,
+  fontWeight = 'bold',
+  color = 'white',
+}) => {
   return (
-    <TouchableOpacity
+    <TouchableOpacity activeOpacity={0.7}
       style={styles.container(backgroundColor, height, width, borderRadius)}
       onPress={onPress}>
       <Text style={styles.txt(fontSize, fontWeight, color)}>{title}</Text>
@@ -22,7 +25,6 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: (backgroundColor, height, width, borderRadius) => ({
-    fontWight: 'bold',
     height: height,
     width: width,
     backgroundColor: backgroundColor,
@@ -33,6 +35,6 @@ const styles = StyleSheet.create({
   txt: (fontSize, fontWight, color) => ({
     color: color,
     fontWeight: fontWight,
-    fontSize: fontSize
-  })
+    fontSize: fontSize,
+  }),
 });

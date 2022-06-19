@@ -1,13 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Button, ProfileAdmin} from './src';
-import ProfileAdminContent from './src/components/ProfileAdminContent';
-import EditProfileContent from './src/components/EditProfileContent';
+import {NavigationContainer} from '@react-navigation/native';
+import Router from './src/routers';
 
 const App = () => {
   return (
-    <EditProfileContent />
-    // <Button/>
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
   );
 };
 
