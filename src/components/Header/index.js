@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 import React from 'react';
 
 const {width, height} = Dimensions.get('window');
-const Header = () => {
+const Header = ({title, source}) => {
   return (
     <View style={{flexDirection: 'row'}}>
       <Image
@@ -17,7 +17,7 @@ const Header = () => {
         }}
       />
       <Image
-        source={require('../../assets/pictures/userPhoto.jpg')}
+        source={source}
         style={{
           width: 70,
           height: 70,
@@ -26,7 +26,8 @@ const Header = () => {
           marginTop: 66,
         }}
       />
-      <Text style={styles.nama}>Cumi-Cumi Studio</Text>
+      <Text style={styles.nama}>{title}</Text>
+      <Text>07123</Text>
     </View>
   );
 };
@@ -46,5 +47,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 18,
     marginLeft: 16,
+    alignSelf: 'center'
   },
 });

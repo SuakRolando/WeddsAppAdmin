@@ -63,7 +63,9 @@ const SignIn = ({navigation}) => {
       <Gap height={25} />
       <View style={styles.textSignUp}>
         <Text>Don't have account ? Sign up </Text>
-        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('SignUp')}>
           <Text style={styles.textHere}>here</Text>
         </TouchableOpacity>
       </View>
@@ -102,10 +104,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btnWrapper: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   textHere: {
     textDecorationLine: 'underline',
     fontWeight: 'bold',
+  },
+  btnWrapper: {
+    alignItems: 'center',
   },
 });

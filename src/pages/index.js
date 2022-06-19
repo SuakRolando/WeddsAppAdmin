@@ -6,6 +6,7 @@ import SplashScreen from './SplashScreen';
 import ProfileAdmin from './ProfileAdmin';
 import AddPackage from './AddPackage';
 import Order from './Order';
+import EditProfile from './Edit Profile';
 
 export {
   SplashScreen,
@@ -15,5 +16,6 @@ export {
   EditPackage,
   ProfileAdmin,
   AddPackage,
-  Order
+  Order,
+  EditProfile,
 };

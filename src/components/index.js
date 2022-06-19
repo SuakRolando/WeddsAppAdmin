@@ -8,7 +8,8 @@ import ButtonProfileAdmin from './ButtonProfileAdmin';
 import TextInput from './TextInput';
 import ContentOrder from './ContentOrder';
 import InputAddPackage from './InputAddPackgae';
-
+import EditProfileContent from './EditProfileContent';
+import HeaderEditProfile from './HeaderEditProfile';
 export {
   Header,
   HomeContent,
@@ -19,5 +20,7 @@ export {
   TextInput,
   ButtonProfileAdmin,
   ContentOrder,
-  InputAddPackage
+  InputAddPackage,
+  EditProfileContent,
+  HeaderEditProfile,
 };

@@ -7,6 +7,7 @@ const HomeContent = ({
   title = 'Add Package',
   subTitle = 'Add Package for your service',
   backgroundColor = '#FFD0EC',
+  onPress
 }) => {
   return (
     <View style={styles.container(backgroundColor)}>
@@ -14,7 +15,7 @@ const HomeContent = ({
         <Text style={styles.header}>{title}</Text>
         <Text style={styles.subHeader}>{subTitle}</Text>
       </View>
-      <TouchableOpacity style={styles.buttonStyle}>
+      <TouchableOpacity style={styles.buttonStyle} onPress={onPress}>
         <RoundedButton title={buttonTitle} />
       </TouchableOpacity>
     </View>

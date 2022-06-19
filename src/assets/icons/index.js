@@ -19,7 +19,8 @@ import EditProfile from './EditProfile.svg';
 import SignOUt from './SignOutsvg.svg';
 import Go from './Go.svg';
 import IconBack from './IconBack.svg';
-
+import ProfileKosong from './ProfileKosong.svg';
+import RectangleEditProfile from './RectangleEditProfile.svg';
 export {
   AddImage,
   Pencil,
@@ -42,4 +43,6 @@ export {
   Whatsapp,
   WeddingProfileAdmin,
   Locations,
+  ProfileKosong,
+  RectangleEditProfile,
 };
