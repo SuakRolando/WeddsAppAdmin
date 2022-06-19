@@ -6,11 +6,33 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {IllustrationWedding, LogoWedds} from '../../assets/icons';
 import {Gap, TextInput, Button} from '../../../src';
+import FIREBASE from '../../config/Firebase';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // const onSubmit = () => {
+  //   firebase
+  //     .auth()
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then(res => {
+  //       navigation.navigate('Home', {
+  //         uid: res.user.uid,
+  //       });
+  //     })}
+
+  const onSubmit = () => {
+    FIREBASE.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(res => {
+        navigation.navigate('Home', {uid: res.user.uid});
+      });
+  };
+
   return (
     <View style={styles.page}>
       <View style={styles.logoWrapper}>
@@ -22,22 +44,26 @@ const SignIn = () => {
         <TextInput
           title="Email Address"
           placeholder="Type your email address"
+          value={email}
+          onChangeText={value => setEmail(value)}
         />
         <Gap height={10} />
         <TextInput
           title="Password"
           placeholder="Type your password"
           secureTextEntry
+          value={password}
+          onChangeText={value => setPassword(value)}
         />
         <Gap height={25} />
       </View>
       <View style={styles.btnWrapper}>
-        <Button/>
+        <Button onPress={onSubmit} />
       </View>
       <Gap height={25} />
       <View style={styles.textSignUp}>
         <Text>Don't have account ? Sign up </Text>
-        <TouchableOpacity activeOpacity={0.7}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')}>
           <Text style={styles.textHere}>here</Text>
         </TouchableOpacity>
       </View>
@@ -57,11 +83,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   illustration: {
+    flex: 1,
     alignItems: 'center',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    position: 'absolute',
+    justifyContent: 'flex-end',
   },
   logoWrapper: {
     alignItems: 'center',
@@ -79,6 +103,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   btnWrapper: {
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
