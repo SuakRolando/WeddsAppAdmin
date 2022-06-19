@@ -1,12 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {IconBack} from '../../assets/icons';
 
 const HeaderEditProfile = () => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <IconBack />
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -15,6 +15,6 @@ export default HeaderEditProfile;
 const styles = StyleSheet.create({
   container: {
     marginLeft: 24,
-    marginTop: 14,
+    marginTop: 23,
   },
 });

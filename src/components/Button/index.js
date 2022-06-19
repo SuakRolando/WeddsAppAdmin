@@ -13,7 +13,8 @@ const Button = ({
   color = 'white',
 }) => {
   return (
-    <TouchableOpacity activeOpacity={0.7}
+    <TouchableOpacity
+      activeOpacity={0.7}
       style={styles.container(backgroundColor, height, width, borderRadius)}
       onPress={onPress}>
       <Text style={styles.txt(fontSize, fontWeight, color)}>{title}</Text>
@@ -32,9 +33,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   }),
-  txt: (fontSize, fontWight, color) => ({
+  txt: (fontSize, fontWeight, color) => ({
     color: color,
-    fontWeight: fontWight,
+    fontWeight: fontWeight,
     fontSize: fontSize,
   }),
 });

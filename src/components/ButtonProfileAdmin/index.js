@@ -15,7 +15,7 @@ const ButtonProfileAdmin = ({
       activeOpacity={0.7}>
       {iconKiri}
       <Gap width={gapKiri} />
-      <Text>{title}</Text>
+      <Text style={styles.txt}>{title}</Text>
       <Gap width={gapKanan} />
       {iconKanan}
     </TouchableOpacity>
@@ -43,5 +43,9 @@ const styles = StyleSheet.create({
   elevation: {
     elevation: 10,
     shadowColor: 'black',
+  },
+  txt: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 18,
   },
 });

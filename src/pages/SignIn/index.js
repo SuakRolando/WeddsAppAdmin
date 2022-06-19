@@ -6,7 +6,6 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
-import React from 'react';
 import React, {useState} from 'react';
 import {IllustrationWedding, LogoWedds} from '../../assets/icons';
 import {Gap, TextInput, Button} from '../../../src';
@@ -64,7 +63,9 @@ const SignIn = ({navigation}) => {
       <Gap height={25} />
       <View style={styles.textSignUp}>
         <Text>Don't have account ? Sign up </Text>
-        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('SignUp')}>
           <Text style={styles.textHere}>here</Text>
         </TouchableOpacity>
       </View>
@@ -106,10 +107,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
-<<<<<<< HEAD
-=======
   btnWrapper: {
     alignItems: 'center',
   },
->>>>>>> 49e8e3381887b29d45b3d536d9e8db48ef131102
 });

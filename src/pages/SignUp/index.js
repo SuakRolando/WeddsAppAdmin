@@ -33,10 +33,10 @@ const SignUp = ({navigation}) => {
 
   const [vendor, setVendor] = useState([
     {icon: <Bridal />, id: 1},
-    {icon: <Catering />, id: 2,},
-    {icon: <Photographer />, id: 3,},
-    {icon: <Venue />,id: 4,},
-    {icon: <WO />,id: 5,} 
+    {icon: <Catering />, id: 2},
+    {icon: <Photographer />, id: 3},
+    {icon: <Venue />, id: 4},
+    {icon: <WO />, id: 5},
   ]);
 
   const [selectVendor, setSelectVendor] = useState({
