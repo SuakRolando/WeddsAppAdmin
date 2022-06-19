@@ -6,14 +6,9 @@ import {View} from 'react-native';
 
 const App = () => {
   return (
-    // <NavigationContainer>
-    //   <Router />
-    //   {/* </NavigationContainer> */}
-
-    <View>
-      {/* <Order /> */}
-      <AddPackage />
-    </View>
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
   );
 };
 
