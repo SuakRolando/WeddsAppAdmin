@@ -107,14 +107,14 @@ const SignUp = () => {
               title="Email Address"
               placeholder="Type your email address"
               value={email}
-              onChangeText={value=>setEmail(value)}
+              onChangeText={value => setEmail(value)}
             />
             <Gap height={20} />
             <TextInput
               title="Password"
               placeholder="Type your password"
               value={password}
-              onChangeText={value=>setPassword(value)}
+              onChangeText={value => setPassword(value)}
               secureTextEntry
             />
             <Gap height={40} />

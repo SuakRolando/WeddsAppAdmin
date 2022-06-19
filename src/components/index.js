@@ -5,5 +5,15 @@ import Gap from './Gap';
 import TextInput_EditPackage from './TextInput_EditPackage';
 import Button from './Button';
 import TextInput from './TextInput';
+import ContentOrder from './ContentOrder';
 
-export {Header, HomeContent, RoundedButton, Gap, TextInput_EditPackage, Button, TextInput};
+export {
+  Header,
+  HomeContent,
+  RoundedButton,
+  Gap,
+  TextInput_EditPackage,
+  Button,
+  TextInput,
+  ContentOrder,
+};
