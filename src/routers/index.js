@@ -1,5 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   SplashScreen,
   SignUp,
@@ -8,9 +9,28 @@ import {
   Home,
   ProfileAdmin,
   EditProfile,
+  AddPackage,
+  BottomNavigator,
+  Order,
 } from '../../src';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+function MainApp() {
+  return (
+    <Tab.Navigator
+      screenOptions={{headerShown: false}}
+      tabBar={props => <BottomNavigator {...props} />}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen
+        name="ProfileAdmin"
+        component={ProfileAdmin}
+        options={{title: 'Profile'}}
+      />
+      <Tab.Screen name="Order" component={Order} />
+    </Tab.Navigator>
+  );
+}
 
 const Router = () => {
   return (
@@ -31,8 +51,8 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="MainApp"
+        component={MainApp}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -48,6 +68,11 @@ const Router = () => {
       <Stack.Screen
         name="EditProfile"
         component={EditProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AddPackage"
+        component={AddPackage}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
