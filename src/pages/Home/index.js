@@ -5,7 +5,6 @@ import {Gap, HomeContent} from '../../components';
 const Home = ({navigation, route}) => {
 
   const {uid} = route.params;
-  console.log(uid);
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor="#FFD0EC" />

@@ -33,11 +33,11 @@ const SignUp = ({navigation}) => {
   const [image, setImage] = useState('null');
 
   const [vendor, setVendor] = useState([
-    {icon: <Bridal />, id: 1},
-    {icon: <Catering />, id: 2,},
-    {icon: <Photographer />, id: 3,},
-    {icon: <Venue />,id: 4,},
-    {icon: <WO />,id: 5,} 
+    {icon: <Bridal />, id: '1'},
+    {icon: <Catering />, id: '2',},
+    {icon: <Photographer />, id: '3',},
+    {icon: <Venue />,id: '4',},
+    {icon: <WO />,id: '5',} 
   ]);
 
   const [selectVendor, setSelectVendor] = useState({
@@ -51,12 +51,13 @@ const SignUp = ({navigation}) => {
       .then(res => {
         const uid = res.user.uid;
         const data = {
-          userName: userName,
+          name: userName,
           email: email,
           phoneNumber: phoneNumber,
           address: address,
           vendor: selectVendor.id,
-          image: image
+          image: image,
+          vendorId : uid
         };
         FIREBASE.database().ref(`vendors/${uid}`).set(data);
         setUserName('');

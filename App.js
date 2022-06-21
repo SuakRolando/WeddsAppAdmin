@@ -10,7 +10,7 @@ const App = () => {
     // <NavigationContainer>
     //   <Router />
     // </NavigationContainer>
-    // <Home/>
+    // <Order/>
     <NavigationContainer>
       <Router />
       <FlashMessage position="top" />

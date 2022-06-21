@@ -12,6 +12,8 @@ const ContentOrder = () => {
       packagePrice: '3.000.000',
       description: 'Warna sesuai tema musim dingin',
       key: 1,
+      isPay: true,
+      isApprove: false
     },
     {
       image: require('../../assets/pictures/pict2.jpg'),
@@ -20,6 +22,8 @@ const ContentOrder = () => {
       packagePrice: '5.000.000',
       description: 'Warna sesuai tema musim gugur',
       key: 2,
+      isPay: false,
+      isApprove: true
     },
     {
       image: require('../../assets/pictures/pict3.jpg'),
@@ -28,30 +32,42 @@ const ContentOrder = () => {
       packagePrice: '1.000.000',
       description: 'Warna sesuai tema musim panas',
       key: 3,
+      isPay: true,
+      isApprove: false
     },
   ]);
   // const Order = () => {};
   return (
-    <View>
+    <View style={{backgroundColor: 'white'}}>
       {/* <> */}
-      <Gap height={148} />
+      <Gap height={40} />
       {/* <Header /> */}
       {dataOrder.map(item => (
         <View style={styles.container} key={item.key}>
           <Image source={item.image} style={styles.image} />
           <View style={styles.wrapperTxt}>
             <Text style={styles.nama}>{item.name}</Text>
-            <Text>{item.namePackage}</Text>
+            <Text >{item.namePackage}</Text>
             <Text>Rp. {item.packagePrice}</Text>
             <Text
-              style={{
-                width: 200,
-              }}>
+              style={styles.txtOrder}>
               Desc: {item.description}
             </Text>
-            <TouchableOpacity activeOpacity={0.7} style={styles.btn}>
-              <Text>Approve</Text>
+            {item.isApprove === true ? null : (
+              <TouchableOpacity activeOpacity={0.7} style={styles.btn}>
+              <Text style={{fontWeight: 'bold', color: 'white'}}>Approve</Text>
             </TouchableOpacity>
+            )}
+            
+          </View>
+          <View style={{flex: 1, alignItems: 'flex-end', marginRight: 14,}}>
+            {item.isPay === true ? (
+              <Text style={{marginTop: 14, fontSize: 9, flex: 1, color: '#E9D35F'}}>Waiting for approvall</Text>
+            ) : null}
+            {item.isApprove === true ? (
+              <Text style={{marginTop: 14, fontSize: 9, flex: 1, color: '#5AD71F'}}>Approve</Text>
+            ) : null}
+          
           </View>
           {/* <Text>index</Text> */}
         </View>
@@ -75,18 +91,20 @@ const styles = StyleSheet.create({
   },
   container: {
     height: 170,
-    width: 350,
-    backgroundColor: 'pink',
+    flex: 1,
+    marginHorizontal: 12,
+    backgroundColor: 'white',
     marginBottom: 30,
     borderRadius: 16,
     alignSelf: 'center',
     flexDirection: 'row',
-    // elevation: 10,
+    elevation: 4,
     // marginTop: 148,
   },
   wrapperTxt: {
-    marginLeft: 43,
+    marginLeft: 20,
     marginTop: 10,
+    width: 190,
   },
   nama: {
     fontFamily: 'Poppins-SemiBold',
@@ -95,8 +113,12 @@ const styles = StyleSheet.create({
   image: {
     width: 64,
     height: 64,
-    marginTop: 16,
-    marginLeft: 12,
+    marginTop: 14,
+    marginLeft: 14,
     borderRadius: 10,
   },
+  txtOrder: {
+    fontSize: 12,
+    
+  }
 });
