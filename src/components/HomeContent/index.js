@@ -7,7 +7,7 @@ const HomeContent = ({
   title = 'Add Package',
   subTitle = 'Add Package for your service',
   backgroundColor = '#FFD0EC',
-  onPress
+  onPress,
 }) => {
   return (
     <View style={styles.container(backgroundColor)}>

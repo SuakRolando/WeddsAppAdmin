@@ -29,7 +29,10 @@ const SignIn = ({navigation}) => {
     FIREBASE.auth()
       .signInWithEmailAndPassword(email, password)
       .then(res => {
-        navigation.navigate('Home', {uid: res.user.uid});
+        console.log(res.user.uid);
+        navigation.navigate('MainApp', {uid: res.user.uid});
+        setEmail('');
+        setPassword('');
       });
   };
 

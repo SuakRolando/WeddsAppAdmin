@@ -41,7 +41,7 @@ const SignUp = ({navigation}) => {
   ]);
 
   const [selectVendor, setSelectVendor] = useState({
-    id: 1,
+    id: '1',
   });
   console.log('id', selectVendor);
 

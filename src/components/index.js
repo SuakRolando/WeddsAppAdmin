@@ -10,6 +10,9 @@ import ContentOrder from './ContentOrder';
 import InputAddPackage from './InputAddPackgae';
 // import EditProfileContent from './EditProfileContent';
 import HeaderEditProfile from './HeaderEditProfile';
+import BottomNavigator from './BottomNavigator';
+import TabItem from './TabItem';
+
 export {
   Header,
   HomeContent,
@@ -23,4 +26,6 @@ export {
   InputAddPackage,
   // EditProfileContent,
   HeaderEditProfile,
+  BottomNavigator,
+  TabItem,
 };

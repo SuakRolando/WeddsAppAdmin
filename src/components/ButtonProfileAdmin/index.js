@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   elevation: {
-    elevation: 6,
+    elevation: 4,
     shadowColor: 'black',
   },
   txt: {

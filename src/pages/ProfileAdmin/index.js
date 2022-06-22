@@ -68,11 +68,20 @@ const ProfileAdmin = ({navigation, route}) => {
 
     });
   };
+
+  const signOut = () => {
+    FIREBASE.auth().signOut().then(() => {
+      navigation.navigate('SignIn', {uid: uid})
+    }).catch((error) => {
+      // An error happened.
+    });
+    
+  }
   return (
     <View style={styles.container}>
       <View style={styles.contentWrapper}>
         {profile.map(item => (
-          <View style={{alignItems: 'center',}} key={item.uid}>
+          <View style={{alignItems: 'center',}} key={uid}>
               <Image source={{uri: item.image}} style={styles.image} />  
               <Gap height={30} />         
             <Text style={styles.title}>{item.userName}</Text>
@@ -104,7 +113,7 @@ const ProfileAdmin = ({navigation, route}) => {
               iconKanan={<Go />}
               gapKiri={87.5}
               gapKanan={87.5}
-              onPress={() => navigation.navigate('SignIn')}
+              onPress={signOut}
             />
           </View>
         ))}

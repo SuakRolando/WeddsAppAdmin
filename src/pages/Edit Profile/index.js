@@ -66,7 +66,7 @@ const EditProfile = ({navigation, route}) => {
   };
 
   const onSubmit = () => {
-    if (!(fullName && phoneNum && address)) {
+    if (!(fullName && phoneNum && address && photoBase64)) {
       showMessage({
         message: 'Please insert all the data.',
         type: 'danger',
@@ -86,7 +86,7 @@ const EditProfile = ({navigation, route}) => {
         type: 'success',
         duration: 1000,
       });
-      navigation.navigate('ProfileAdmin' ,{uid: uid});
+      navigation.navigate('MainApp' ,{uid: uid});
     }
   };
   return (

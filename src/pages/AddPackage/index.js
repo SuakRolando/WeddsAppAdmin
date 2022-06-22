@@ -28,7 +28,7 @@ const AddPackage = ({navigation, route}) => {
   const [profile, setProfile] = useState([
     {
       userName: '',
-      photo: '',
+      photo: null,
       uid: uid,
     },
   ]);
@@ -84,7 +84,6 @@ const AddPackage = ({navigation, route}) => {
     navigation.navigate('Home', {uid: uid});
   };
   const addImage = () => {
-    const data = {};
     const picture1 = photoBase641;
     const picture2 = photoBase642;
     // console.log('pic', picture1);

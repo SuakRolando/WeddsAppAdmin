@@ -21,6 +21,12 @@ import Go from './Go.svg';
 import IconBack from './IconBack.svg';
 import ProfileKosong from './ProfileKosong.svg';
 import RectangleEditProfile from './RectangleEditProfile.svg';
+import IconHome from './IconHome.svg';
+import IconProfile from './IconProfile.svg';
+import IconOrder from './IconOrder.svg';
+import IconHomeAktif from './IconHomeAktif.svg';
+import IconProfileAktif from './IconProfileAktif.svg';
+import IconOrderAktif from './IconOrderAktif.svg';
 export {
   AddImage,
   Pencil,
@@ -45,4 +51,10 @@ export {
   Locations,
   ProfileKosong,
   RectangleEditProfile,
+  IconHome,
+  IconOrder,
+  IconProfile,
+  IconHomeAktif,
+  IconOrderAktif,
+  IconProfileAktif,
 };
